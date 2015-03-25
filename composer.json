@@ -1,0 +1,21 @@
+{
+  "name": "andywendt/solid_php_examples",
+  "description": "Tested examples of SOLID PHP code",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Andy Wendt",
+      "email": "andy@awendt.com"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "4.5.*",
+    "mockery/mockery": "0.9.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SolidPhp\\": "src/"
+    }
+  }
+}
