@@ -4,7 +4,7 @@ namespace SolidPhp\SingleResonsibilityPrinciple\violation;
 use SolidPhp\SingleResonsibilityPrinciple\interfaces\Coach;
 use SolidPhp\SingleResonsibilityPrinciple\interfaces\Player;
 
-class BasketballPlayer implements Player, Coach
+class BasketballPlayerAndCoach implements Player, Coach
 {
 
     public function leadTeam()
