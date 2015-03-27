@@ -13,6 +13,7 @@ class BasketballCoachTest extends \PHPUnit_Framework_TestCase
     {
         $basketballCoach = new BasketballCoach();
         $this->assertInstanceOf(\SolidPhp\SingleResonsibilityPrinciple\interfaces\Coach::class, $basketballCoach);
+        $this->assertNotInstanceOf(\SolidPhp\SingleResonsibilityPrinciple\interfaces\Player::class, $basketballCoach);
     }
 
 }

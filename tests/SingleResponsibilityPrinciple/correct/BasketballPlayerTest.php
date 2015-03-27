@@ -11,8 +11,9 @@ class BasketballPlayerTest extends \PHPUnit_Framework_TestCase
      */
     public function is_only_a_player()
     {
-        $basketballCoach = new BasketballPlayer();
-        $this->assertInstanceOf(\SolidPhp\SingleResonsibilityPrinciple\interfaces\Player::class, $basketballCoach);
+        $basketballPlayer = new BasketballPlayer();
+        $this->assertInstanceOf(\SolidPhp\SingleResonsibilityPrinciple\interfaces\Player::class, $basketballPlayer);
+        $this->assertNotInstanceOf(\SolidPhp\SingleResonsibilityPrinciple\interfaces\Coach::class, $basketballPlayer);
     }
 
 }
