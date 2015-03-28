@@ -8,10 +8,14 @@ Entities should do one thing only and do it well.
 
 ## Open/Closed Principle
 
+>Software entities (classes, modules, functions, etc.) should be **open for extension**, but **closed for modification.**
+
 Entities should be open for extension but closed to modification.
 
 
 ## Liskov Substitution Principle
+
+>Subtypes must be substitutable for their base types.
 
 Derived classes must be substitutable for their base types.
 
@@ -27,4 +31,14 @@ If it looks like a duck, quacks like a duck and needs batteries, you probably ha
 ## Interface Segregation Principle
 
 >Clients should not be forced to depend on methods that they do not use.
+
+If clients are forced to depend on methods that they do not use, it results in inadvertent coupling.
+
+
+## Dependency Inversion Principle
+
+>a. High-level modules should not depend on low-level modules.  Both should depend on abstractions.  
+>b. Abstractions should not depend on details.  Details should depend on abstractions. 
+
+
 
