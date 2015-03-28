@@ -3,6 +3,18 @@ namespace SolidPhp\LiskovSubstitutionPrinciple\Violation;
 
 class BarFilterTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var BarFilter
+     */
+    protected $barFilter;
+
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->barFilter = new BarFilter();
+    }
+
 
     /**
      * @test
@@ -22,8 +34,7 @@ class BarFilterTest extends \PHPUnit_Framework_TestCase
          */
         $this->setExpectedException(\Exception::class);
 
-        $barFilter = new BarFilter();
-        $actual = $barFilter->run([]);
+        $this->barFilter->run([]);
     }
 
     /**
@@ -31,8 +42,7 @@ class BarFilterTest extends \PHPUnit_Framework_TestCase
      */
     public function it_sometimes_returns_a_string_so_it_cannot_be_substituted_for_the_base_type()
     {
-        $barFilter = new BarFilter();
-        $actual = $barFilter->run(['bar']);
+        $actual = $this->barFilter->run(['bar']);
 
         /*
          * The consumer of the Filter interface is going to be freaking out
@@ -47,4 +57,18 @@ class BarFilterTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(is_string($actual));
     }
 
+    /**
+     * @test
+     */
+    public function it_sometimes_returns_an_array()
+    {
+        $actual = $this->barFilter->run(['test']);
+
+        /*
+         * This would drive you certifiably nuts receiving an array
+         * sometimes and string others and then other times being greeted
+         * by an exception you could not see coming.
+         */
+        $this->assertContains('test', $actual);
+    }
 }
