@@ -6,7 +6,7 @@ interface Defense
     /**
      * Block a shot by the offense
      *
-     * @return void
+     * @return bool
      */
     public function block();
 }

@@ -10,20 +10,25 @@ class BasketballPlayer implements Offense, Defense
     /**
      * Block a shot by the offense
      *
-     * @return void
+     * @return bool
      */
     public function block()
     {
-        echo 'You have been blocked';
+        return $this->randomBool();
     }
 
     /**
      * Try to score by shooting the ball while on offense
      *
-     * @return void
+     * @return bool
      */
     public function shoot()
     {
-        echo 'Nothing but net...';
+        return $this->randomBool();
+    }
+
+    protected function randomBool()
+    {
+        return (bool) rand(0,1);
     }
 }

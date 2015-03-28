@@ -6,7 +6,7 @@ interface Offense
     /**
      * Try to score by shooting the ball while on offense
      *
-     * @return void
+     * @return bool
      */
     public function shoot();
 }
