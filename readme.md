@@ -4,6 +4,8 @@
 
 ## Single Responsibility Principle
 
+>A class should only have one reason to change.
+
 Entities should do one thing only and do it well.
 
 ## Open/Closed Principle
